@@ -151,5 +151,6 @@ public class GardenHelper {
         System.out.println();
 
     }
+    javac GardenMain.java GardenHelper.java GardenPlant.java GardenRow.java GardenView.java Plant.java -encoding utf-8
 
 }
