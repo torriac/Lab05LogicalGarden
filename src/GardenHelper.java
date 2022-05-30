@@ -24,14 +24,29 @@ public class GardenHelper {
         }
     }
     /*
-       BRAINSTORM FOR ADDROW() HERE
+       I believe this method can only add a row if row, pH, and light are in their correct range of values. Row must be between 1 and 3, inclusively. pH should be
+       between 5 and 8, inclusively. Light can be "any", "partial sun", or "full sun".
      */
     public boolean addRow(int row, int pH, String light) {
-        //TODO student
+        if((row >= 1) && (row <= 3)) {
+            if((pH > 4) && (pH < 9)) {
+                if((light == "any") || (light == "partial sun") || (light == "full sun")) {
+                    System.out.println("Row " + row + " was added.");
+                    return true;
+                else {
+                    return false;
+                }
+            else {
+                return false;
+            }
+        else {            
         return false;
+        }
     }
     /*
-        DESCRIPTION OF ADDPLANT() HERE
+        This method checks if the method "canPlant" is evaluated as true. If it is true, a plant is added to the specified row, and 
+        it tells the user which plant was planted in which row. If the method "canPlant" is not passed, then the plant is not planted,
+        and the output tells the user this the planting failed.
      */
     public boolean addPlant(String plantName, int row) {
         if(canPlant(plantName, searchRow(row))){
